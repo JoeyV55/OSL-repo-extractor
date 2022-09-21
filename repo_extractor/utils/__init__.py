@@ -1,2 +1,2 @@
-import repo_extractor.utils.dict_utils
-import repo_extractor.utils.file_io_utils
+import OSLextractor.repo_extractor.utils.dict_utils
+import OSLextractor.repo_extractor.utils.file_io_utils

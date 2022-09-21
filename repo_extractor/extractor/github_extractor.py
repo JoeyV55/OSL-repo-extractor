@@ -4,9 +4,9 @@ import socket
 import sys
 import time
 import github
-from repo_extractor import conf, schema
-from repo_extractor.utils import dict_utils, file_io_utils as io
-from repo_extractor.extractor import _sessions
+from OSLextractor.repo_extractor import conf, schema
+from OSLextractor.repo_extractor.utils import dict_utils, file_io_utils as io
+from OSLextractor.repo_extractor.extractor import _sessions
 
 # ANSI escape sequence for clearing a row in the console:
 # credit: https://stackoverflow.com/a/64245513
@@ -291,7 +291,7 @@ class Extractor:
 
         io.write_merged_dict_to_jsonfile(out_data, output_file)
 
-        print()
+        return out_data
 
     def __get_issue_comments(self, fields: list, cmd_tbl: dict, issue) -> dict:
         """

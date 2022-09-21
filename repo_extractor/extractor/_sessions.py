@@ -3,7 +3,7 @@
 import sys
 import time
 import github
-from repo_extractor.utils import file_io_utils
+from OSLextractor.repo_extractor.utils import file_io_utils
 
 
 class GithubSession:
@@ -56,6 +56,7 @@ class GithubSession:
         """
         # retrieve token from auth file
         token = file_io_utils.read_file_line(auth_path)
+        print("Token: " + token)
 
         # establish a session with token
         session = github.Github(

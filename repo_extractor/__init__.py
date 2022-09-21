@@ -1,4 +1,4 @@
-import repo_extractor.conf
-import repo_extractor.schema
-import repo_extractor.utils
-import repo_extractor.extractor
+import OSLextractor.repo_extractor.conf
+import OSLextractor.repo_extractor.schema
+import OSLextractor.repo_extractor.utils
+import OSLextractor.repo_extractor.extractor

@@ -1,9 +1,9 @@
 """Provides driver functionality for running the GitHub extractor."""
 
 import argparse
-from repo_extractor import conf, schema
-from repo_extractor.extractor import github_extractor
-from repo_extractor.utils import file_io_utils as file_io
+from OSLextractor.repo_extractor import conf, schema
+from OSLextractor.repo_extractor.extractor import github_extractor
+from OSLextractor.repo_extractor.utils import file_io_utils as file_io
 
 
 def main():
@@ -25,14 +25,16 @@ def main():
     print("Extraction complete!\n")
 
 
-def get_user_cfg() -> dict:
+def get_user_cfg(cfg_path="") -> dict:
     """
     Get path to and read from configuration file.
 
     :return: dict of configuration values
     :rtype: dict
     """
-    cfg_path = get_cli_args()
+    if cfg_path == "": 
+        #throw error for empty path instead.
+        cfg_path = get_cli_args()
 
     return file_io.read_jsonfile_into_dict(cfg_path)
 

@@ -10,7 +10,7 @@ from json.decoder import JSONDecodeError
 import os
 import sys
 
-from repo_extractor.utils import dict_utils
+from OSLextractor.repo_extractor.utils import dict_utils
 
 
 def mk_json_outpath(out_path: str):
