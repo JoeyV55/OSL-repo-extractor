@@ -20,7 +20,7 @@ class Extractor:
     # ----------------------------------------------------------------------
     # Initialization tools
     # ----------------------------------------------------------------------
-    def __init__(self, cfg_obj: conf.Cfg) -> None:
+    def __init__(self, project, cfg_obj: conf.Cfg) -> None:
         """
         Extractor object initialization.
 
@@ -53,7 +53,7 @@ class Extractor:
         )
 
         self.paged_list = self.__get_issues_paged_list(
-            self.__get_repo_obj(), self.cfg.get_cfg_val("state")
+            self.__get_repo_obj(project), self.cfg.get_cfg_val("state")
         )
 
         # get index of last page in paginated list
@@ -63,14 +63,14 @@ class Extractor:
 
         self.cfg.set_cfg_val("range", self.__get_sanitized_cfg_range())
 
-    def __get_repo_obj(self):
+    def __get_repo_obj(self, project):
         """
         TODO.
 
         Returns:
             github.Repository.Repository: repo obj for current extraction op
         """
-        job_repo = self.cfg.get_cfg_val("repo")
+        job_repo = project
 
         while True:
             try:
